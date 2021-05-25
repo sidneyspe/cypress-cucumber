@@ -1,5 +1,5 @@
 {
-  "name": "AgileProcess",
+  "name": "e2e",
   "version": "1.0.0",
   "description": "e2e Tests with Cucumber",
   "main": "index.js",
