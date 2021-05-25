@@ -1,0 +1,54 @@
+{
+  "name": "AgileProcess",
+  "version": "1.0.0",
+  "description": "e2e Tests with Cucumber",
+  "main": "index.js",
+  "author": "Sidney Pimentel",
+  "scripts": {
+    "cy:open": "./node_modules/.bin/cypress open",
+    "cy:run": "./node_modules/.bin/cypress run",
+    "cy:chrome": "./node_modules/.bin/cypress run --browser chrome --no-exit",
+    "eslint:fix": "eslint ./cypress --fix --ext .js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/support/steps"
+  },
+  "devDependencies": {
+    "@applitools/eyes-cypress": "^3.21.1",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.14.2",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-root-import": "^6.6.0",
+    "cypress": "^7.3.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
+    "eslint-plugin-cypress": "^2.11.3",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0"
+  },
+  "dependencies": {
+    "@4tw/cypress-drag-drop": "^1.6.0",
+    "cypress-cucumber-preprocessor": "^4.1.0",
+    "customize-cra": "^1.0.0",
+    "cypress-file-upload": "^5.0.7",
+    "cypress-real-events": "^1.4.0"
+  },
+  "license": "MIT"
+}
